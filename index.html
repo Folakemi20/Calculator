@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="bg-black w-full h-[100%] lg:w-[30%] lg:mx-auto m-0">
+      <div class="">
+        <button>
+            <img class="hover:opacity-50 cursor-pointer" src="./images/menu.png" alt="" />
+        </button>
+      </div>
+
+      <div class="pt-[12%]">
+        <div class="flex justify-end px-4">
+        <input
+          class="border-none text-white w-full px-4 outline outline-none text-[50px] text-end"
+          type="text"
+          name=""
+          id="number"
+        />
+      </div>
+
+      <div class="flex flex-row lg:p-6 p-3 lg:gap-2 gap-3">
+        <button
+          class="bg-gray-500 rounded-full w-20 h-20 hover:bg-gray-400 flex items-center justify-center" onclick="Del()"
+        >
+          <p class="text-white text-[35px] font-semibold">AC</p>
+        </button>
+        <button
+          class="bg-gray-500 rounded-full w-20 h-20 hover:bg-gray-400 flex items-center justify-center"
+        >
+          <p class="text-white text-[35px] font-semibold">+/-</p>
+        </button>
+        <button
+          class="bg-gray-500 rounded-full w-20 h-20 hover:bg-gray-400 flex items-center justify-center"
+        >
+          <p class="text-white text-[35px] font-semibold">%</p>
+        </button>
+        <button
+          class="bg-orange-400 rounded-full w-20 h-20 hover:bg-orange-300 flex items-center justify-center" onclick="display('/')"
+        >
+          <img class="w-11" src="./images/divide.png" alt="" />
+        </button>
+      </div>
+
+      <div class="flex flex-row lg:p-6 p-3 lg:gap-2 gap-3 pt-0">
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('7')"
+        >
+          <p class="text-white text-[35px] font-semibold">7</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('8')"
+        >
+          <p class="text-white text-[35px] font-semibold">8</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('9')"
+        >
+          <p class="text-white text-[35px] font-semibold">9</p>
+        </button>
+        <button
+          class="bg-orange-400 rounded-full w-20 h-20 hover:bg-orange-300 flex items-center justify-center" onclick="display('*')"
+        >
+          <img class="w-6" src="./images/math.png" alt="" />
+        </button>
+      </div>
+
+      <div class="flex flex-row lg:p-6 p-3 lg:gap-2 gap-3 pt-0">
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('4')"
+        >
+          <p class="text-white text-[35px] font-semibold">4</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('5')"
+        >
+          <p class="text-white text-[35px] font-semibold">5</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('6')"
+        >
+          <p class="text-white text-[35px] font-semibold">6</p>
+        </button>
+        <button
+          class="bg-orange-400 rounded-full w-20 h-20 hover:bg-orange-300 flex items-center justify-center" onclick="display('-')"
+        >
+          <img class="w-10" src="./images/minus.png" alt="" />
+        </button>
+      </div>
+
+      <div class="flex flex-row lg:p-6 p-3 lg:gap-2 gap-3 pt-0">
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('1')"
+        >
+          <p class="text-white text-[35px] font-semibold">1</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('2')"
+        >
+          <p class="text-white text-[35px] font-semibold">2</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('3')"
+        >
+          <p class="text-white text-[35px] font-semibold">3</p>
+        </button>
+        <button
+          class="bg-orange-400 rounded-full w-20 h-20 hover:bg-orange-300 flex items-center justify-center" onclick="display('+')"
+        >
+          <img class="w-8" src="./images/plus (1).png" alt="" />
+        </button>
+      </div>
+
+      <div class="flex flex-row lg:p-6 p-3 lg:gap-2 gap-3 pt-0">
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center"
+        >
+          <img class="w-8" src="./images/calculator.png" alt="" />
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('0')"
+        >
+          <p class="text-white text-[35px] font-semibold">0</p>
+        </button>
+        <button
+          class="bg-gray-800 rounded-full w-20 h-20 hover:bg-gray-500 flex items-center justify-center" onclick="display('.')"
+        >
+          <p class="text-white text-[35px] font-semibold">.</p>
+        </button>
+        <button
+          class="bg-orange-400 rounded-full w-20 h-20 hover:bg-orange-300 flex items-center justify-center" onclick="solve('=')"
+        >
+          <img class="w-10" src="./images/equal.png" alt="" />
+        </button>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+    <script>
+        function display(a) {
+            return document.getElementById('number').value+=a
+        }
+
+        function solve() {
+            let a = document.getElementById('number').value
+            let b = eval(a)
+            return document.getElementById('number').value=b
+        }
+
+        function Del(){
+            document.getElementById('number').value=" "
+        }
+
+    </script>
+
+
+
+
+  </body>
+</html>
